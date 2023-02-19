@@ -33,7 +33,7 @@
       enable = true;
       plugins = with pkgs.vimPlugins; [ 
         vim-nix
-        kanagawa-nvim
+        # kanagawa-nvim
       ];
       settings = {
         number = true;
@@ -48,7 +48,6 @@
         syntax on
         set wrap
         set smartindent
-        colorscheme kanagawa
       '';
     };
     neovim = {
