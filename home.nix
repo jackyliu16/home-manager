@@ -31,12 +31,10 @@
   programs = {
     vim = {
       enable = true;
-      plugins = [ 
-        pkgs.vimPlugins.vim-nix
+      plugins = with pkgs.vimPlugins; [ 
+        vim-nix
+        kanagawa-nvim
       ];
-      # plugins = [
-      #   <derivation vimplugin-vim-nix-2022-04-25>
-      # ];
       settings = {
         number = true;
         expandtab = true;
@@ -50,6 +48,7 @@
         syntax on
         set wrap
         set smartindent
+        colorscheme kanagawa
       '';
     };
     neovim = {
