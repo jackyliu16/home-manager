@@ -2,17 +2,11 @@ syntax on
 set wrap
 set smartindent
 
-# left
 set number
 set relativenumber
 
-# tab
 set expandtab
 set copyindent
 
-# number
-set shiftwidth=2;
-set tabstop=2;
-
-colorscheme gruvbox
-
+set shiftwidth=2
+set tabstop=2

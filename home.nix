@@ -32,8 +32,17 @@
     vim = {
       enable = true;
       plugins = with pkgs.vimPlugins; [ 
+        # language support
         vim-nix
-        # kanagawa-nvim
+        rust-vim
+        vim-toml
+
+        # UI
+        vim-gitgutter   # status in gitter
+        vim-airline     # vim-devicons
+        
+        ## colocscheme
+        gruvbox
       ];
       extraConfig = builtins.readFile ./vimAndNeovim/vimExtraConfig;
     };
