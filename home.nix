@@ -35,34 +35,12 @@
         vim-nix
         # kanagawa-nvim
       ];
-      settings = {
-        number = true;
-        expandtab = true;
-        copyindent = true;
-        relativenumber = true;
-
-        shiftwidth = 2;
-        tabstop = 2;
-      };
-      extraConfig = ''
-        syntax on
-        set wrap
-        set smartindent
-      '';
+      extraConfig = builtins.readFile ./vimAndNeovim/vimExtraConfig;
     };
     neovim = {
       enable = true;
-      extraConfig = ''
-        syntax on
-        set wrap
-        set smartindent
-        set number
-        set relativenumber
-        set expandtab
-
-        set tabstop=2
-        set shiftwidth=2
-      '';
+      vimAlias = true;
+      extraConfig = builtins.readFile ./vimAndNeovim/vimExtraConfig;
     };
   };
 
