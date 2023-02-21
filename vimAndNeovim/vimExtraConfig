@@ -11,4 +11,4 @@ set copyindent
 set shiftwidth=2
 set tabstop=2
 
-# colorscheme gruvbox
+colorscheme gruvbox
