@@ -2,6 +2,18 @@
 
 let 
   b = pkgs.callPackage ./src/b {};
+  pkgs = import <nixpkgs> {};
+  LS_COLORS = pkgs.fetchgit {
+    url = "https://github.com/trapd00r/LS_COLORS";
+    rev = "09dab448207002624d17f01ed7cbf820aa048063";
+    sha256 = "sha256-hQTT/yNS9UIDZqHuul0xmknnOh6tOtfotQIm0SY5TTE=";
+  };
+  ls-colors = pkgs.runCommand "ls-colors" { } ''
+    mkdir -p $out/bin $out/share
+    ln -s ${pkgs.coreutils}/bin/ls          $out/bin/ls
+    ln -s ${pkgs.coreutils}/bin/dircolors   $out/bin/dircolors
+    cp ${LS_COLORS}/LS_COLORS               $out/share/LS_COLORS
+  '';
   minidev = pkgs.callPackage ./src/minidev {};
 in
 {
@@ -23,14 +35,14 @@ in
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
-  home.packages = with pkgs; [
+  home.packages = [
+    pkgs.git
+    pkgs.ripgrep
+    pkgs.tree
+    pkgs.jq
+    pkgs.bat
+    ls-colors
     minidev
-    minidev
-    git
-    ripgrep
-    tree
-    jq
-    bat
   ];
 
   # config: vim and neovim
