@@ -1,0 +1,19 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+Encoding.default_external = Encoding::UTF_8
+Encoding.default_internal = Encoding::UTF_8
+
+unshift_path = ->(path) {
+  p = File.expand_path("../../#{path}", File.realpath(__FILE__))
+  $LOAD_PATH.unshift(p) unless $LOAD_PATH.include?(p)
+}
+unshift_path.call('vendor/deps/cli-ui/lib')
+unshift_path.call('vendor/deps/cli-kit/lib')
+unshift_path.call('lib')
+
+require('b')
+
+exit(B::ErrorHandler.call do
+  B::EntryPoint.call(ARGV.dup)
+end)

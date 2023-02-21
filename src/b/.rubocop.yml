@@ -1,0 +1,19 @@
+inherit_from:
+  - https://shopify.github.io/ruby-style-guide/rubocop.yml
+
+AllCops:
+  Exclude:
+    - 'vendor/**/*'
+
+Style/MethodCallWithArgsParentheses:
+  Enabled: true
+  IgnoredMethods: []
+  IgnoreMacros: false
+
+Style/StringLiterals:
+  Enabled: true
+  EnforcedStyle: single_quotes
+
+# TODO: pass $BUNDIX_QUIET like a real piece of data
+Style/GlobalVars:
+  Enabled: false

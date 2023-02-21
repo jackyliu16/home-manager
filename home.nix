@@ -1,5 +1,9 @@
 { config, pkgs, ... }:
 
+let 
+  b = pkgs.callPackage ./src/b {};
+  minidev = pkgs.callPackage ./src/minidev {};
+in
 {
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
@@ -15,16 +19,18 @@
   # the Home Manager release notes for a list of state version
   # changes in each release.
   home.stateVersion = "22.11";
-  home.shellAliases = {
-    hwc = "vim ~/.config/nixpkgs/home.nix";
-    hws = "home-manager switch";
-  };
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
-  home.packages = [
-    pkgs.htop
+  home.packages = with pkgs; [
+    minidev
+    minidev
+    git
+    ripgrep
+    tree
+    jq
+    bat
   ];
 
   # config: vim and neovim
@@ -46,11 +52,11 @@
       ];
       extraConfig = builtins.readFile ./vimAndNeovim/vimExtraConfig;
     };
-    neovim = {
-      enable = true;
-      vimAlias = true;
-      extraConfig = builtins.readFile ./vimAndNeovim/vimExtraConfig;
-    };
+    #neovim = {
+    #  enable = true;
+    #  vimAlias = true;
+    #  extraConfig = builtins.readFile ./vimAndNeovim/vimExtraConfig;
+    #};
   };
 
 }

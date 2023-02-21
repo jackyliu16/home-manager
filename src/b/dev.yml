@@ -1,0 +1,23 @@
+name: b
+
+up:
+  - ruby: 2.6.5
+  - bundler
+
+test:
+  run: |
+    if [ "$#" -eq 1 ] && [[ -f $1 ]]; then
+      rake test TEST=$1
+    else
+      rake test "$@"
+    fi
+
+console: script/console
+
+build: { implemented: false }
+
+commands:
+  style: bundle exec rubocop -D
+  typecheck:
+    aliases: ['tc']
+    run: bundle exec srb tc
