@@ -40,7 +40,6 @@ in
     pkgs.ripgrep
     pkgs.tree
     pkgs.jq
-    pkgs.bat
     ls-colors
     minidev
   ];
@@ -83,4 +82,11 @@ in
     };
   };
 
+  programs.bat = {
+    enable = true;
+    config = {
+      # theme = "ansi-dark";
+      theme = "base16-256";
+    };
+  };
 }
