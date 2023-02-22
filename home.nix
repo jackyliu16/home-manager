@@ -40,6 +40,8 @@ in
     pkgs.ripgrep
     pkgs.tree
     pkgs.jq
+    pkgs.fzf    # everything
+    pkgs.rnix-lsp # lsp support of nix
     ls-colors
     minidev
   ];
@@ -68,6 +70,7 @@ in
       plugins = with pkgs.vimPlugins; [ 
         # language support
         vim-nix
+        nix-develop-nvim
         rust-vim
         vim-toml
 
@@ -79,6 +82,17 @@ in
         gruvbox
       ];
       extraConfig = builtins.readFile ./vimAndNeovim/vimExtraConfig;
+      coc = {
+        enable = true;
+        settings = {
+          languageserver = {
+            nix = {
+              command = "rnix-lsp";
+              filetypes = [ "nix" ];
+            };
+          };
+        };
+      };
     };
   };
 
