@@ -2,7 +2,6 @@
 
 let 
   b = pkgs.callPackage ./src/b {};
-  pkgs = import <nixpkgs> {};
   LS_COLORS = pkgs.fetchgit {
     url = "https://github.com/trapd00r/LS_COLORS";
     rev = "09dab448207002624d17f01ed7cbf820aa048063";
@@ -70,7 +69,6 @@ in
       plugins = with pkgs.vimPlugins; [ 
         # language support
         vim-nix
-        nix-develop-nvim
         rust-vim
         vim-toml
 
@@ -96,11 +94,31 @@ in
     };
   };
 
-  programs.bat = {
-    enable = true;
-    config = {
-      # theme = "ansi-dark";
-      theme = "base16-256";
+
+  # terminal 
+  programs = {
+    bat = {
+      enable = true;
+      config = {
+        # theme = "ansi-dark";
+        theme = "base16-256";
+      };
+    };
+    zsh = {
+      enable = true;
+      enableAutosuggestions = true;
+      enableSyntaxHighlighting = true;
+      autocd = true;
+      defaultKeymap = "vicmd";
+      shellAliases = {
+        ll = "ls -l";
+        # ".." = "cd ..";
+      };
+      # shellGlobalAliases = '''';
+      # .zshenv
+      # envExtra = '''';
+      # .zshrc
+      # initExtra   
     };
   };
 }
