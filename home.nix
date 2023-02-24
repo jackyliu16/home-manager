@@ -1,6 +1,7 @@
 { config, pkgs, ... }:
 
 let 
+  # shell color: diff typr of file will have diff color
   b = pkgs.callPackage ./src/b {};
   LS_COLORS = pkgs.fetchgit {
     url = "https://github.com/trapd00r/LS_COLORS";
@@ -21,27 +22,28 @@ in
   home.username = "jacky";
   home.homeDirectory = "/home/jacky";
 
-  # This value determines the Home Manager release that your
-  # configuration is compatible with. This helps avoid breakage
-  # when a new Home Manager release introduces backwards
-  # incompatible changes.
-  #
-  # You can update Home Manager without changing this value. See
-  # the Home Manager release notes for a list of state version
-  # changes in each release.
   home.stateVersion = "22.11";
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
   home.packages = [
+    # Basical 
     pkgs.git
-    pkgs.ripgrep
-    pkgs.tmux
-    pkgs.tree
-    pkgs.jq
-    pkgs.fzf    # everything
-    pkgs.rnix-lsp # lsp support of nix
+    pkgs.ripgrep    # search the content of the file in a directory
+    pkgs.tmux       # terminal split screen
+    pkgs.tree       # show the directory structure as a tree
+    pkgs.jq         # ?
+    pkgs.fzf        # everything
+    pkgs.rnix-lsp   # lsp support of nix
+    pkgs.htop       # colorful top
+    pkgs.range      # file management
+    # Coding 
+    pkgs.gnumake
+    pkgs.clang
+    pkgs.python3
+
+    # Personal
     ls-colors
     minidev
   ];
