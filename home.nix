@@ -21,7 +21,6 @@ in
   # paths it should manage.
   home.username = "jacky";
   home.homeDirectory = "/home/jacky";
-
   home.stateVersion = "22.11";
 
   # Let Home Manager install and manage itself.
@@ -37,7 +36,8 @@ in
     pkgs.fzf        # everything
     pkgs.rnix-lsp   # lsp support of nix
     pkgs.htop       # colorful top
-    pkgs.range      # file management
+    pkgs.ranger     # file management
+
     # Coding 
     pkgs.gnumake
     pkgs.clang
@@ -114,13 +114,9 @@ in
       enableCompletion = true;
       sessionVariables = { RPROMPT = ""; };
 
-      # shellAliases = {
-      #   k = "kubectl";
-      #   kp = "kube-prompt";
-      #   kc = "kubectx";
-      #   kn = "kubens";
-      #   t = "cd $(mktemp -d)";
-      # };
+      shellAliases = {
+        hws="home-manager switch --flake . --option substituters 'https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store'";
+      };
 
       oh-my-zsh.enable = true;
 
