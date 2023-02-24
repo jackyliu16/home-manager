@@ -119,8 +119,28 @@ in
       };
 
       oh-my-zsh.enable = true;
-
+      oh-my-zsh.plugins = [
+        "git"
+        "git-prompt"
+        "branch"
+        "fzf"
+      ];
       plugins = [
+        {
+          name = "k";
+          file = "k.sh";
+          src = pkgs.fetchFromGitHub {
+            owner = "supercrabtree";
+            repo = "k";
+            rev = "e2bfbaf3b8ca92d6ffc4280211805ce4b8a8c19e";
+            sha256 = "sha256-32rJjBzqS2e6w/L78KMNwQRg4E3sqqdAmb87XEhqbRQ=";
+          };
+        } 
+        {
+          name = "zsh-completions";
+          file = "zsh-completions.plugin.zsh";
+          src = pkgs.zsh-completions;
+        }
         {
           name = "autopair";
           file = "autopair.zsh";
@@ -154,7 +174,8 @@ in
       ];
 
       initExtra = ''
-          PROMPT='%{$fg_bold[blue]%}$(get_pwd)%{$reset_color%} ''${prompt_suffix}'
+          ZSH_THEME="robbyrussell"
+          PROMPT='%{$fg_bold[blue]%}$(get_pwd)%{$reset_color%} $(git_super_status) ''${prompt_suffix}'
           local prompt_suffix="%(?:%{$fg_bold[green]%}❯ :%{$fg_bold[red]%}❯%{$reset_color%} "
           function get_pwd(){
               git_root=$PWD
