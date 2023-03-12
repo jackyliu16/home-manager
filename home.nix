@@ -103,4 +103,11 @@ in
       theme = "base16-256";
     };
   };
+
+  programs.vscode = {
+    enable = true;
+    extensions = with pkgs.vscode-extensions; [
+      antfu.slidev
+    ];
+  };
 }
