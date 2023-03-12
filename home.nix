@@ -83,17 +83,17 @@ in
         gruvbox
       ];
       extraConfig = builtins.readFile ./vimAndNeovim/vimExtraConfig;
-      coc = {
-        enable = true;
-        settings = {
-          languageserver = {
-            nix = {
-              command = "rnix-lsp";
-              filetypes = [ "nix" ];
-            };
-          };
-        };
-      };
+      # coc = {
+      #   enable = true;
+      #   # settings = {
+      #   #   languageserver = {
+      #   #     nix = {
+      #   #       command = "rnix-lsp";
+      #   #       filetypes = [ "nix" ];
+      #   #     };
+      #   #   };
+      #   # };
+      # };
     };
   };
 
