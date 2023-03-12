@@ -1,0 +1,3 @@
+[submodule "src/minidev"]
+	path = src/minidev
+	url = https://github.com/burke/minidev.git
