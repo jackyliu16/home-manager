@@ -73,10 +73,15 @@ in
         nix-develop-nvim
         rust-vim
         vim-toml
+        coc-rust-analyzer
 
         # UI
         vim-gitgutter   # status in gitter
         vim-airline     # vim-devicons
+        nerdtree
+        nerdtree-git-plugin
+        vim-nerdtree-tabs
+        vim-nerdtree-syntax-highlight
         
         ## colocscheme
         gruvbox
@@ -107,7 +112,19 @@ in
   programs.vscode = {
     enable = true;
     extensions = with pkgs.vscode-extensions; [
-      antfu.slidev
+      antfu.slidev                            # ppt create
+      # LSP
+      matklad.rust-analyzer                 
+      # code tools 
+      christian-kohler.path-intellisense
+      yzhang.markdown-all-in-one
+      tabnine.tabnine-vscode
+      ms-vscode.cpptools
+      usernamehw.errorlens
+      ## Nix
+      bbenoist.nix
+      jnoortheen.nix-ide
+      b4dm4n.vscode-nixpkgs-fmt
     ];
   };
 }
