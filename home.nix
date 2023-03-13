@@ -117,6 +117,8 @@ in
 
       shellAliases = {
         hws="home-manager switch --flake . --option substituters 'https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store'";
+        hns="home-manager switch";
+        chw="cd ~/.config/nixpkgs/";
       };
 
       oh-my-zsh.enable = true;
@@ -176,7 +178,8 @@ in
 
       initExtra = ''
           ZSH_THEME="robbyrussell"
-          PROMPT='%{$fg_bold[blue]%}$(get_pwd)%{$reset_color%} $(git_super_status) ''${prompt_suffix}'
+          # PROMPT='%{$fg_bold[blue]%}$(get_pwd)%{$reset_color%}$(git_super_status)''${prompt_suffix}'
+          PROMPT='%{$fg_bold[blue]%}$(get_pwd)%{$reset_color%} ''${prompt_suffix}'
           local prompt_suffix="%(?:%{$fg_bold[green]%}❯ :%{$fg_bold[red]%}❯%{$reset_color%} "
           function get_pwd(){
               git_root=$PWD
