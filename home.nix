@@ -2,7 +2,7 @@
 
 let 
   # shell color: diff typr of file will have diff color
-  b = pkgs.callPackage ./src/b {};
+  # b = pkgs.callPackage ./src/b {};
   LS_COLORS = pkgs.fetchgit {
     url = "https://github.com/trapd00r/LS_COLORS";
     rev = "09dab448207002624d17f01ed7cbf820aa048063";
@@ -15,12 +15,13 @@ let
     cp ${LS_COLORS}/LS_COLORS               $out/share/LS_COLORS
   '';
   minidev = pkgs.callPackage ./src/minidev {};
+  user = "jacky";
 in
 {
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
-  home.username = "jacky";
-  home.homeDirectory = "/home/jacky";
+  home.username = "${user}";
+  home.homeDirectory = "/home/${user}";
   home.stateVersion = "22.11";
 
   # Let Home Manager install and manage itself.
@@ -203,6 +204,7 @@ in
                   printf "\e]%s\e\\" "$1"
               fi
         }
+        if [ -e /home/jacky/.nix-profile/etc/profile.d/nix.sh ]; then . /home/jacky/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
       '';
     };
   };
