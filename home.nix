@@ -16,6 +16,12 @@ let
   '';
   minidev = pkgs.callPackage ./src/minidev {};
   user = "jacky";
+  my-python-packages = p: with p; [
+    pandas
+    matplotlib
+    pylint
+    rarfile
+  ];
 in
 {
   # Home Manager needs a bit of information about you and the
@@ -23,7 +29,6 @@ in
   home.username = "${user}";
   home.homeDirectory = "/home/${user}";
   home.stateVersion = "22.11";
-
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
@@ -42,7 +47,8 @@ in
     # Coding 
     pkgs.gnumake
     pkgs.clang
-    pkgs.python3
+    (pkgs.python310.withPackages my-python-packages)
+    # pkgs.python3
 
     # Personal
     ls-colors
@@ -129,6 +135,16 @@ in
         "fzf"
       ];
       plugins = [
+	{
+          name = "zsh-nix-shell";
+          file = "nix-shell.plugin.zsh";
+          src = pkgs.fetchFromGitHub {
+            owner = "chisui";
+            repo = "zsh-nix-shell";
+            rev = "v0.5.0";
+            sha256 = "0za4aiwwrlawnia4f29msk822rj9bgcygw6a8a6iikiwzjjz0g91";
+          };
+	}
         {
           name = "k";
           file = "k.sh";
