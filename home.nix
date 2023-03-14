@@ -207,7 +207,9 @@ in
                   printf "\e]%s\e\\" "$1"
               fi
         }
-        if [ -e /home/jacky/.nix-profile/etc/profile.d/nix.sh ]; then . /home/jacky/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+        export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
       '';
     };
   };
