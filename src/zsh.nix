@@ -6,6 +6,7 @@
 , options
 }: 
 
+# ref: https://github.dev/Smaug123/nix-dotfiles
 {
   #home.packages = with pkgs; [
   #  pure-prompt

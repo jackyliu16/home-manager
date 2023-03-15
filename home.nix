@@ -118,6 +118,5 @@ in
         theme = "base16-256";
       };
     };
-    # Ref on https://github.com/cmacrae/config/blob/master/modules/macintosh.nix
   };
 }
