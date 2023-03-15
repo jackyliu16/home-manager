@@ -32,6 +32,10 @@ in
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
+  imports = [
+    src/zsh.nix
+  ];
+
   home.packages = [
     # Basical 
     pkgs.git
@@ -115,118 +119,5 @@ in
       };
     };
     # Ref on https://github.com/cmacrae/config/blob/master/modules/macintosh.nix
-    zsh = {
-      enable = true;
-      enableAutosuggestions = true;
-      enableCompletion = true;
-      sessionVariables = { RPROMPT = ""; };
-
-      shellAliases = {
-        hws="home-manager switch --flake . --option substituters 'https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store'";
-        hns="home-manager switch";
-        chw="cd ~/.config/nixpkgs/";
-      };
-
-      oh-my-zsh.enable = true;
-      oh-my-zsh.plugins = [
-        "git"
-        "git-prompt"
-        "branch"
-        "fzf"
-      ];
-      plugins = [
-	{
-          name = "zsh-nix-shell";
-          file = "nix-shell.plugin.zsh";
-          src = pkgs.fetchFromGitHub {
-            owner = "chisui";
-            repo = "zsh-nix-shell";
-            rev = "v0.5.0";
-            sha256 = "0za4aiwwrlawnia4f29msk822rj9bgcygw6a8a6iikiwzjjz0g91";
-          };
-	}
-        {
-          name = "k";
-          file = "k.sh";
-          src = pkgs.fetchFromGitHub {
-            owner = "supercrabtree";
-            repo = "k";
-            rev = "e2bfbaf3b8ca92d6ffc4280211805ce4b8a8c19e";
-            sha256 = "sha256-32rJjBzqS2e6w/L78KMNwQRg4E3sqqdAmb87XEhqbRQ=";
-          };
-        } 
-        {
-          name = "zsh-completions";
-          file = "zsh-completions.plugin.zsh";
-          src = pkgs.zsh-completions;
-        }
-        {
-          name = "autopair";
-          file = "autopair.zsh";
-          src = pkgs.fetchFromGitHub {
-            owner = "hlissner";
-            repo = "zsh-autopair";
-            rev = "4039bf142ac6d264decc1eb7937a11b292e65e24";
-            sha256 = "02pf87aiyglwwg7asm8mnbf9b2bcm82pyi1cj50yj74z4kwil6d1";
-          };
-        }
-        {
-          name = "fast-syntax-highlighting";
-          file = "fast-syntax-highlighting.plugin.zsh";
-          src = pkgs.fetchFromGitHub {
-            owner = "zdharma";
-            repo = "fast-syntax-highlighting";
-            rev = "v1.28";
-            sha256 = "106s7k9n7ssmgybh0kvdb8359f3rz60gfvxjxnxb4fg5gf1fs088";
-          };
-        }
-        {
-          name = "z";
-          file = "zsh-z.plugin.zsh";
-          src = pkgs.fetchFromGitHub {
-            owner = "agkozak";
-            repo = "zsh-z";
-            rev = "41439755cf06f35e8bee8dffe04f728384905077";
-            sha256 = "1dzxbcif9q5m5zx3gvrhrfmkxspzf7b81k837gdb93c4aasgh6x6";
-          };
-        }
-      ];
-
-      initExtra = ''
-          ZSH_THEME="robbyrussell"
-          # PROMPT='%{$fg_bold[blue]%}$(get_pwd)%{$reset_color%}$(git_super_status)''${prompt_suffix}'
-          PROMPT='%{$fg_bold[blue]%}$(get_pwd)%{$reset_color%} ''${prompt_suffix}'
-          local prompt_suffix="%(?:%{$fg_bold[green]%}❯ :%{$fg_bold[red]%}❯%{$reset_color%} "
-          function get_pwd(){
-              git_root=$PWD
-              while [[ $git_root != / && ! -e $git_root/.git ]]; do
-                  git_root=$git_root:h
-              done
-              if [[ $git_root = / ]]; then
-                  unset git_root
-                  prompt_short_dir=%~
-              else
-                  parent=''${git_root%\/*}
-                  prompt_short_dir=''${PWD#$parent/}
-              fi
-              echo $prompt_short_dir
-          }
-          vterm_printf(){
-              if [ -n "$TMUX" ]; then
-                  # Tell tmux to pass the escape sequences through
-                  # (Source: http://permalink.gmane.org/gmane.comp.terminal-emulators.tmux.user/1324)
-                  printf "\ePtmux;\e\e]%s\007\e\\" "$1"
-              elif [ "''${TERM%%-*}" = "screen" ]; then
-                  # GNU screen (screen, screen-256color, screen-256color-bce)
-                  printf "\eP\e]%s\007\e\\" "$1"
-              else
-                  printf "\e]%s\e\\" "$1"
-              fi
-        }
-        export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-      '';
-    };
   };
 }
