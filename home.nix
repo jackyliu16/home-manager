@@ -66,7 +66,7 @@ in
       enable = true;
       plugins = with pkgs.vimPlugins; [ 
         # language support
-        # vim-lsp
+        vim-lsp
         # asyncomplete-vim
         # jedi-vim
         vim-nix
@@ -77,9 +77,11 @@ in
         # UI
         vim-gitgutter   # status in gitter
         vim-airline     # vim-devicons
+        (nvim-treesitter.withPlugins (p: [ p.c p.java p.rust p.python p.go ]))
         
         ## colocscheme
         gruvbox
+        tokyonight-nvim
         vim-devicons    
 
         # Tools
@@ -113,6 +115,7 @@ in
         
         ## colocscheme
         gruvbox
+        (nvim-treesitter.withPlugins (p: [ p.c p.java p.rust p.python p.go ]))
       ];
       extraConfig = builtins.readFile ./vimAndNeovim/vimExtraConfig;
       # coc = {

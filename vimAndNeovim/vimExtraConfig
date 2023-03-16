@@ -75,3 +75,10 @@ let g:NERDTreeGitStatusIndicatorMapCustom = {
 "let g:NERDTreeExtensionHighlightColor = {} " this line is needed to avoid error
 
 " vim-lsp configuration" https://www.kawabangga.com/posts/3745
+if executable('nil')
+  autocmd User lsp_setup call lsp#register_server({
+    \ 'name': 'nil',
+    \ 'cmd': {server_info->['nil']},
+    \ 'whitelist': ['nix'],
+    \ })
+endif
