@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 let 
   # shell color: diff typr of file will have diff color
@@ -75,6 +75,9 @@ in
         
         ## colocscheme
         gruvbox
+
+        # Tools
+        auto-pairs
       ];
       extraConfig = builtins.readFile ./vimAndNeovim/vimExtraConfig;
     };
