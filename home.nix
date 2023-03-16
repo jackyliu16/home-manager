@@ -78,10 +78,10 @@ in
         vim-gitgutter   # status in gitter
         vim-airline     # vim-devicons
         (nvim-treesitter.withPlugins (p: [ p.c p.java p.rust p.python p.go ]))
+        vim-bufferline  # 标签页
         
         ## colocscheme
         gruvbox
-        tokyonight-nvim
         vim-devicons    
 
         # Tools
