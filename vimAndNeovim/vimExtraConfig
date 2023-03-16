@@ -16,12 +16,12 @@ set background=dark
 
 " YouCompleteMe https://blog.51cto.com/dlican/3794231"
 
-" NERDTree
+" NERDTree  https://segmentfault.com/a/1190000015143474
 ">> Basic settings
 map <C-e> :NERDTreeToggle<CR>
 let g:NERDTreeChDirMode = 2  "Change current folder as root
-autocmd vimenter * NERDTree  "自动开启Nerdtree
 autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) |cd %:p:h |endif
+" autocmd vimenter * NERDTree  "自动开启Nerdtree
 
 ">> UI settings
 let NERDTreeQuitOnOpen=1   " Close NERDtree when files was opened
@@ -73,3 +73,5 @@ let g:NERDTreeGitStatusIndicatorMapCustom = {
 "let g:NERDTreeHighlightFolders = 1 " enables folder icon highlighting using exact match
 "let g:NERDTreeHighlightFoldersFullName = 1 " highlights the folder name
 "let g:NERDTreeExtensionHighlightColor = {} " this line is needed to avoid error
+
+" vim-lsp configuration" https://www.kawabangga.com/posts/3745

@@ -66,7 +66,9 @@ in
       enable = true;
       plugins = with pkgs.vimPlugins; [ 
         # language support
-        vim-lsp
+        # vim-lsp
+        # asyncomplete-vim
+        # jedi-vim
         vim-nix
         rust-vim
         vim-toml
