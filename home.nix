@@ -52,6 +52,7 @@ in
     pkgs.gnumake
     pkgs.clang
     (pkgs.python310.withPackages my-python-packages)
+    # pkgs.ycmd            # the code-completion server of YouCompleteMe
     # pkgs.python3
 
     # Personal
@@ -65,9 +66,11 @@ in
       enable = true;
       plugins = with pkgs.vimPlugins; [ 
         # language support
+        vim-lsp
         vim-nix
         rust-vim
         vim-toml
+        # YouCompleteMe   # 自动补全
 
         # UI
         vim-gitgutter   # status in gitter
@@ -75,9 +78,22 @@ in
         
         ## colocscheme
         gruvbox
+        vim-devicons    
 
         # Tools
         auto-pairs
+        LeaderF         # 模糊查找
+        nerdcommenter   # 多行注释支持
+        Vundle-vim      # plug-in manager for Vim
+        # lightline     # tabline customization
+        vim-startify    # 最近打开的文件
+        vim-fugitive    # Git Support
+
+        # NERDTree
+        nerdtree
+        vim-nerdtree-tabs
+        vim-nerdtree-syntax-highlight
+        nerdtree-git-plugin
       ];
       extraConfig = builtins.readFile ./vimAndNeovim/vimExtraConfig;
     };
