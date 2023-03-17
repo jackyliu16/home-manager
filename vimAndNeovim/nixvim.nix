@@ -26,9 +26,18 @@ in
         "<C-e>" = ":Neotree<CR>";
         # using for Bufferline
         "<C-h>" = ":BufferLineCyclePrev<CR>";
-        "<C-l>" = ":BufferLineCycleNext<CR>";
-        # Esc Operation
-        "<SPACE>" = ":";
+        "<C-l>" = ":BufferLineCycleNext<CR>";     # move to prev, next buffer
+        "<C-w>" = ":bdelete %";                   # delete current buffer
+        # Leader Operation
+        leader = "<space>";
+        "<leader>1" = { action = ":BufferLineGoToBuffer 1<CR>"; silent = true; };
+        "<leader>2" = { action = ":BufferLineGoToBuffer 2<CR>"; silent = true; };
+        "<leader>3" = { action = ":BufferLineGoToBuffer 3<CR>"; silent = true; };
+        "<leader>4" = { action = ":BufferLineGoToBuffer 4<CR>"; silent = true; };
+        "<leader>5" = { action = ":BufferLineGoToBuffer 5<CR>"; silent = true; };
+        "<leader>bp"= { action = ":BufferLinePickClose<CR>"; silent = true; };
+        "<leader>bdl"= { action = ":BufferLineCloseLeft<CR>"; silent = true; };
+        "<leader>bdr"= { action = ":BufferLineCloseRight<CR>"; silent = true; };
       };
       insert = {
         "jk" = "<ESC>";
@@ -40,6 +49,7 @@ in
       bufferline = {
         enable = true;
         diagnostics = "nvim_lsp";
+        numbers = "ordinal";
       };  
     };
     
@@ -49,15 +59,17 @@ in
       clipboard = "unnamedplus";
 
       wrap = true;
-      smartindent = true;
-
+      syntax = "enable";
       number = true;
       relativenumber = true;
       expandtab = true;
+      autoindent = true;
       copyindent = true;
+      smartindent = true;
 
-      shiftwidth = 2;
       tabstop = 2;
+      softtabstop = 2;
+      shiftwidth = 2;
 
       background = "dark";
       encoding = "utf-8";
