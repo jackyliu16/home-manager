@@ -14,7 +14,7 @@ in
 
   programs.nixvim = {
     enable = true;
-    vialias = true;
+    viAlias = true;
     vimAlias = true;
 
     options = {
@@ -22,7 +22,6 @@ in
       spelllang = "en_us";
       clipboard = "unnamedplus";
 
-      syntax = true;
       wrap = true;
       smartindent = true;
 
