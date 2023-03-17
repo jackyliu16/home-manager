@@ -1,3 +1,20 @@
+## Neovim
+
+### Mapping
+
+#### Nomenclature 
+
+| Normal            | Abbreviation            |
+| ----------------- | ----------------------- |
+| Ctrl + sth        | <C-?>                   |
+| space, esc, shift | <Space>, <ESC>, <shift> |
+| Alt + sth         | <A>                     |
+| back space        | <BS>                    |
+| carriage return   | <CR>                    |
+| f1 - f12          | <f1> - <f12>            |
+
+
+
 ## terminal 
 
 ### Zsh Plugins 
@@ -17,11 +34,12 @@
 
 #### Dirhistory
 
-|  ShortCut  | Description    |
-| Alt + Left | prev directory |
-| Alt + Right| next directory |
-| Alt + Up   | Parent         |
-| Alt + Down | First Child    |
+| ShortCut    | Description    |
+| ----------- | -------------- |
+| Alt + Left  | prev directory |
+| Alt + Right | next directory |
+| Alt + Up    | Parent         |
+| Alt + Dow   | First Child    |
 
 [home-page](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/dirhistory)
 
