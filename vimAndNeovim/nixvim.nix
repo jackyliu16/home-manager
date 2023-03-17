@@ -12,7 +12,7 @@ in
     # For nix-darwin nixvim.nixDarwinModules.nixvim
     ./colorscheme.nix
     # ./lightline.nix
-    ./airline.nix
+    # ./airline.nix
   ];
 
   programs.nixvim = {
@@ -29,8 +29,11 @@ in
         "<C-h>" = ":BufferLineCyclePrev<CR>";
         "<C-l>" = ":BufferLineCycleNext<CR>";     # move to prev, next buffer
         "<C-w>" = ":bdelete %";                   # delete current buffer
+        # Terminal
+        "<C-n>" = ":FloatermNew<CR>";
+        "<C-j>" = ":FloatermShow<CR>";
         # Leader Operation
-        leader = "<space>";
+        mapleader = "<Space>";
         "<leader>1" = { action = ":BufferLineGoToBuffer 1<CR>"; silent = true; };
         "<leader>2" = { action = ":BufferLineGoToBuffer 2<CR>"; silent = true; };
         "<leader>3" = { action = ":BufferLineGoToBuffer 3<CR>"; silent = true; };
@@ -43,23 +46,33 @@ in
       insert = {
         "jk" = "<ESC>";
       };
+      terminal = {
+        "<C-j>" = "<C-\\><C-n>:FloatermHide<CR>";
+        "<C-w>" = "<C-\\><C-n>:FloatermKill<CR>";
+      };
     };
 
     plugins = {
       # neo-tree.enable = true;
+      startify.enable = true;         # 新标签页
+      floaterm = {
+        enable = true;
+        width = 0.8;
+        height = 0.8;
+      };
       nvim-tree = {
         enable = true;
         filters = {
           dotfiles = false;
-          exclude = [     # include in nvim-tree
+          exclude = [                 # include in nvim-tree
             ".gitignore"
           ];
-          custom = [      # exclude in nvim-tree
+          custom = [                  # exclude in nvim-tree
             "^\\.git"
           ];
         };    
       };
-
+      lualine.enable = true;
       bufferline = {
         enable = true;
         diagnostics = "nvim_lsp";
@@ -120,7 +133,7 @@ in
       # YouCompleteMe   # 自动补全
 
       # UI
-      vim-gitgutter   # status in gitter
+      vim-gitgutter     # status in gitter
       # vim-airline     # vim-devicons
       (nvim-treesitter.withPlugins (p: [ p.c p.java p.rust p.python p.go ]))
       # vim-bufferline  # 标签页
@@ -134,14 +147,9 @@ in
       nerdcommenter   # 多行注释支持
       # Vundle-vim      # plug-in manager for Vim
       # lightline     # tabline customization
-      vim-startify    # 最近打开的文件
       vim-fugitive    # Git Support
 
-      # NERDTree
-      # nerdtree
-      # vim-nerdtree-tabs
-      # vim-nerdtree-syntax-highlight
-      # nerdtree-git-plugin
+      which-key-nvim
     ];
   };
 }
