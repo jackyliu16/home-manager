@@ -48,6 +48,7 @@ in
     pkgs.rnix-lsp   # lsp support of nix
     pkgs.htop       # colorful top
     pkgs.ranger     # file management
+    pkgs.ripgrep    #  ripgrep recursively searches directories for a regex pattern
 
     # Coding 
     pkgs.gnumake
