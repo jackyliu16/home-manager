@@ -22,15 +22,22 @@ in
 
     maps = {
       normal = {
-        #"<C-e>" = { action = ":Neotree"; slient = false; };
-        "<C-e>" = ":Neotree";
+        # using for Neo-Tree
+        "<C-e>" = ":Neotree<CR>";
+        # using for Bufferline
+        "<C-h>" = ":BufferLineCyclePrev<CR>";
+        "<C-l>" = ":BufferLineCycleNext<CR>";
       };
     };
 
-    plugins.neo-tree = {
-      enable = true;
+    plugins = {
+      neo-tree.enable = true;
+      bufferline = {
+        enable = true;
+        diagnostics = "nvim_lsp";
+      };  
     };
-
+    
     options = {
       mouse = "a";
       spelllang = "en_us";
