@@ -11,12 +11,25 @@ in
     # For NixOS nixvim.nixosModules.nixvim
     # For nix-darwin nixvim.nixDarwinModules.nixvim
     ./colorscheme.nix
+    # ./lightline.nix
+    ./airline.nix
   ];
 
   programs.nixvim = {
     enable = true;
     viAlias = true;
     vimAlias = true;
+
+    maps = {
+      normal = {
+        #"<C-e>" = { action = ":Neotree"; slient = false; };
+        "<C-e>" = ":Neotree";
+      };
+    };
+
+    plugins.neo-tree = {
+      enable = true;
+    };
 
     options = {
       mouse = "a";
@@ -35,6 +48,13 @@ in
       tabstop = 2;
 
       background = "dark";
+      encoding = "utf-8";
+      termencoding = "utf-8";
+      fileencoding = "chinese";
+      fileencodings = [
+        "utf-8"
+        "chinese"
+      ];
     };
 
     extraPlugins = with pkgs.vimPlugins; [
@@ -63,29 +83,27 @@ in
 
       # UI
       vim-gitgutter   # status in gitter
-      vim-airline     # vim-devicons
+      # vim-airline     # vim-devicons
       (nvim-treesitter.withPlugins (p: [ p.c p.java p.rust p.python p.go ]))
-      vim-bufferline  # 标签页
-      nvim-gdb
+      # vim-bufferline  # 标签页
+      # nvim-gdb
       
-      ## colocscheme
-      # gruvbox
       # vim-devicons    
 
       # Tools
       auto-pairs
       LeaderF         # 模糊查找
       nerdcommenter   # 多行注释支持
-      Vundle-vim      # plug-in manager for Vim
+      # Vundle-vim      # plug-in manager for Vim
       # lightline     # tabline customization
       vim-startify    # 最近打开的文件
       vim-fugitive    # Git Support
 
       # NERDTree
-      nerdtree
-      vim-nerdtree-tabs
-      vim-nerdtree-syntax-highlight
-      nerdtree-git-plugin
+      # nerdtree
+      # vim-nerdtree-tabs
+      # vim-nerdtree-syntax-highlight
+      # nerdtree-git-plugin
     ];
   };
 }

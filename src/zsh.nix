@@ -42,6 +42,9 @@
       hns="home-manager switch";
       chw="cd ~/.config/nixpkgs/";
     };
+    localVariables = {
+      TERM="xterm-256color";
+    };
     initExtra = ''
       # Enable Nix
       . /home/jacky/.nix-profile/etc/profile.d/nix.sh
