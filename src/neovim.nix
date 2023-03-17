@@ -38,12 +38,12 @@ in
     extraPlugins = with pkgs.vimPlugins; [
       # vim-wakatime
       # language support
-      # vim-lsp
+      vim-lsp
       # # asyncomplete-vim
       # # jedi-vim
-      # vim-nix
-      # rust-vim
-      # vim-toml
+      vim-nix
+      rust-vim
+      vim-toml
       # YouCompleteMe   # 自动补全
 
       # UI
@@ -58,13 +58,13 @@ in
       # vim-devicons    
 
       # Tools
-      # auto-pairs
-      # LeaderF         # 模糊查找
-      # nerdcommenter   # 多行注释支持
-      # Vundle-vim      # plug-in manager for Vim
-      # # lightline     # tabline customization
-      # vim-startify    # 最近打开的文件
-      # vim-fugitive    # Git Support
+      auto-pairs
+      LeaderF         # 模糊查找
+      nerdcommenter   # 多行注释支持
+      Vundle-vim      # plug-in manager for Vim
+      # lightline     # tabline customization
+      vim-startify    # 最近打开的文件
+      vim-fugitive    # Git Support
 
       # NERDTree
       nerdtree
