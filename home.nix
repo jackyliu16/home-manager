@@ -79,6 +79,7 @@ in
         vim-airline     # vim-devicons
         (nvim-treesitter.withPlugins (p: [ p.c p.java p.rust p.python p.go ]))
         vim-bufferline  # 标签页
+        nvim-gdb
         
         ## colocscheme
         gruvbox
