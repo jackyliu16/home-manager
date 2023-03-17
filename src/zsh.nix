@@ -12,9 +12,7 @@
   #  pure-prompt
   #];
 
-  programs.fish = {
-    enable = false;
-  };
+  programs.fish.enable = false;
 
   programs.zsh = {
     enable = true;
