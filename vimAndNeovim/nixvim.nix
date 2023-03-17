@@ -29,8 +29,10 @@ in
         "<C-h>" = ":BufferLineCyclePrev<CR>";
         "<C-l>" = ":BufferLineCycleNext<CR>";     # move to prev, next buffer
         "<C-w>" = ":bdelete %";                   # delete current buffer
-        # Terminal
-        "<C-n>" = ":FloatermNew<CR>";
+        # Terminal(floaterm)
+        "<A-1>" = ":FloatermNew --with-type=split --height=0.4<CR>";
+        "<A-2>" = ":FloatermNew --with-type=vsplit --width=0.4<CR>";
+        "<A-3>" = ":FloatermNew<CR>";
         "<C-j>" = ":FloatermShow<CR>";
         # Leader Operation
         mapleader = "<Space>";
@@ -47,12 +49,19 @@ in
         "jk" = "<ESC>";
       };
       terminal = {
+        # floaterm
         "<C-j>" = "<C-\\><C-n>:FloatermHide<CR>";
         "<C-w>" = "<C-\\><C-n>:FloatermKill<CR>";
       };
     };
 
     plugins = {
+      # treesitter = {
+      #   enable = true;
+      # }
+      telescope = {
+        enable = true;
+      }
       # neo-tree.enable = true;
       startify.enable = true;         # 新标签页
       floaterm = {
@@ -151,5 +160,8 @@ in
 
       which-key-nvim
     ];
+    extraConfigVim = ''
+      autocmd TermOpen * setlocal nonumber norelativenumber
+    '';
   };
 }

@@ -48,7 +48,6 @@ in
     rnix-lsp   # lsp support of nix
     htop       # colorful top
     ranger     # file management
-
     # Coding 
     gnumake
     clang
