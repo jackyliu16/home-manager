@@ -23,7 +23,8 @@ in
     maps = {
       normal = {
         # using for Neo-Tree
-        "<C-e>" = ":Neotree<CR>";
+        "<C-e>" = ":NvimTreeToggle<CR>";
+        # "<C-e>" = ":Neotree<CR>";
         # using for Bufferline
         "<C-h>" = ":BufferLineCyclePrev<CR>";
         "<C-l>" = ":BufferLineCycleNext<CR>";     # move to prev, next buffer
@@ -45,7 +46,20 @@ in
     };
 
     plugins = {
-      neo-tree.enable = true;
+      # neo-tree.enable = true;
+      nvim-tree = {
+        enable = true;
+        filters = {
+          dotfiles = false;
+          exclude = [     # include in nvim-tree
+            ".gitignore"
+          ];
+          custom = [      # exclude in nvim-tree
+            "^\\.git"
+          ];
+        };    
+      };
+
       bufferline = {
         enable = true;
         diagnostics = "nvim_lsp";
