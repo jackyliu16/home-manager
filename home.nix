@@ -34,7 +34,7 @@ in
 
   imports = [
     src/zsh.nix
-    src/neovim.nix
+    ./vimAndNeovim/nixvim.nix
   ];
 
   home.packages = [
