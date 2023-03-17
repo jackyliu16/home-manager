@@ -102,35 +102,6 @@ in
       ];
       extraConfig = builtins.readFile ./vimAndNeovim/vimExtraConfig;
     };
-    neovim = {
-      enable = true;
-      plugins = with pkgs.vimPlugins; [ 
-        # language support
-        vim-nix
-        rust-vim
-        vim-toml
-
-        # UI
-        vim-gitgutter   # status in gitter
-        vim-airline     # vim-devicons
-        
-        ## colocscheme
-        gruvbox
-        (nvim-treesitter.withPlugins (p: [ p.c p.java p.rust p.python p.go ]))
-      ];
-      extraConfig = builtins.readFile ./vimAndNeovim/vimExtraConfig;
-      # coc = {
-      #   enable = true;
-      #   # settings = {
-      #   #   languageserver = {
-      #   #     nix = {
-      #   #       command = "rnix-lsp";
-      #   #       filetypes = [ "nix" ];
-      #   #     };
-      #   #   };
-      #   # };
-      # };
-    };
   };
 
 
