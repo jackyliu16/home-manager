@@ -23,7 +23,7 @@
     enableSyntaxHighlighting = true;
     oh-my-zsh = {
       enable = true;
-      plugins = [ "git" "macos" "dircycle" "timer" ];
+      plugins = [ "git" "macos" "dircycle" "timer" "sudo" "web-search" "dirhistory" "history" "jsontools" ];
       theme = "robbyrussell";
     };
     sessionVariables = {
