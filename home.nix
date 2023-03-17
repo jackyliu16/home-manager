@@ -34,6 +34,7 @@ in
 
   imports = [
     src/zsh.nix
+    src/neovim.nix
   ];
 
   home.packages = with pkgs; [
