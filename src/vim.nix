@@ -2,7 +2,7 @@
 
 let 
   nixvim = import (builtins.fetchGit {
-    url = "https://github.com/pta2022/nixvim";
+    url = "git@github.com:pta2002/nixvim.git";
   });
 in
 {
