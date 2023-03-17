@@ -41,6 +41,9 @@
       chw="cd ~/.config/nixpkgs/";
       send="curl -F 'c=@-' 'https://fars.ee'";
     };
+    localVariables = {
+      TERM="xterm-256color";
+    };
     initExtra = ''
       # Enable Nix
       . /home/jacky/.nix-profile/etc/profile.d/nix.sh
