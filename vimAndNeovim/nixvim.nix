@@ -10,6 +10,7 @@ in
     nixvim.homeManagerModules.nixvim
     # For NixOS nixvim.nixosModules.nixvim
     # For nix-darwin nixvim.nixDarwinModules.nixvim
+    ./colorscheme.nix
   ];
 
   programs.nixvim = {
@@ -35,6 +36,7 @@ in
 
       background = "dark";
     };
+
     extraPlugins = with pkgs.vimPlugins; [
       # (vim-wakatime.overrideAttrs (old: {
       #   patchPhase = ''
