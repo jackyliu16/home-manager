@@ -56,6 +56,7 @@ in
     };
 
     plugins = {
+      markdown-preview.enable = true;
       telescope = {
         enable = true;
         # keymaps = {
