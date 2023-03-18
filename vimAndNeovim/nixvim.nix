@@ -14,7 +14,7 @@ in
     # For NixOS nixvim.nixosModules.nixvim
     # For nix-darwin nixvim.nixDarwinModules.nixvim
     ./colorscheme.nix
-    # ./lightline.nix
+    ./status_bar.nix
     # ./airline.nix
     # ./lang.nix
     # ./autocomplete.nix
@@ -92,11 +92,11 @@ in
         ];
       };
       startify.enable = true;         # 新标签页
-      # floaterm = {
-      #   enable = true;
-      #   width = 0.8;
-      #   height = 0.8;
-      # };
+      floaterm = {
+        enable = true;
+        width = 0.8;
+        height = 0.8;
+      };
       nvim-tree = {
         enable = true;
         filters = {
@@ -109,7 +109,7 @@ in
           ];
         };    
       };
-      lualine.enable = true;
+      # change in different buffer
       bufferline = {
         enable = true;
         diagnostics = "nvim_lsp";
