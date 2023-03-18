@@ -14,6 +14,7 @@ in
     # ./lightline.nix
     # ./airline.nix
     ./lang.nix
+    ./autocomplete.nix
   ];
 
   programs.nixvim = {
