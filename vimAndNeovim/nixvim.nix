@@ -56,11 +56,16 @@ in
     };
 
     plugins = {
-      # treesitter = {
-      #   enable = true;
-      # }
       telescope = {
         enable = true;
+        # keymaps = {
+        #   "<leader>ff" = "find_files";    # Find File
+        #   "<leader>gg" = "live_grep";     # find words 
+        #   "<leader>fm" = "marks";         
+        #   "<leader>fj" = "jumplist";        
+        #   "<leader>fh" = "oldfiles";      # Recently opened files 
+        #   "<leader>fb" = "file_browser";  # File Browser  
+        # };
       };
       # neo-tree.enable = true;
       startify.enable = true;         # 新标签页
