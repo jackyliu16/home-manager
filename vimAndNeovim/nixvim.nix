@@ -61,7 +61,7 @@ in
       # }
       telescope = {
         enable = true;
-      }
+      };
       # neo-tree.enable = true;
       startify.enable = true;         # 新标签页
       floaterm = {
