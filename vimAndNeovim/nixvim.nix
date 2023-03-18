@@ -57,6 +57,10 @@ in
 
     plugins = {
       markdown-preview.enable = true;
+      treesitter = {
+        enable = true;
+        ensureInstalled = [ "c" "python" "rust" "cpp" "toml" "nix" "go" "java" ];
+      }; 
       telescope = {
         enable = true;
         # keymaps = {
