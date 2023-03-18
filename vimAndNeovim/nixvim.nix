@@ -1,4 +1,7 @@
-{ pkgs, lib, ... }:
+{ pkgs
+, config
+, lib
+, ... }:
 let
   nixvim = import (builtins.fetchGit {
     url = "https://github.com/pta2002/nixvim";
@@ -74,9 +77,19 @@ in
       treesitter = {
         enable = true;
         indent = true;
-        nixGrammars = false;
-        ensureInstalled = [ "rust" "python" ];
-        package = (pkgs.vimPlugins.nvim-treesitter.withPlugins (p: [ p.c p.cpp p.nix ]));
+        ensureInstalled = [ "rust" "python" "c" "cpp" "toml" "nix" "go" "java" ];
+        grammarPackages = with config.programs.nixvim.plugins.treesitter.package.builtGrammars; [
+          c
+          go
+          cpp
+          nix
+          bash
+          html
+          help
+          latex
+          python
+          rust
+        ];
       };
       startify.enable = true;         # 新标签页
       # floaterm = {
