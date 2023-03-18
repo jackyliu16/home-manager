@@ -13,8 +13,8 @@ in
     ./colorscheme.nix
     # ./lightline.nix
     # ./airline.nix
-    ./lang.nix
-    ./autocomplete.nix
+    # ./lang.nix
+    # ./autocomplete.nix
   ];
 
   programs.nixvim = {
@@ -79,11 +79,11 @@ in
         package = (pkgs.vimPlugins.nvim-treesitter.withPlugins (p: [ p.c p.cpp p.nix ]));
       };
       startify.enable = true;         # 新标签页
-      floaterm = {
-        enable = true;
-        width = 0.8;
-        height = 0.8;
-      };
+      # floaterm = {
+      #   enable = true;
+      #   width = 0.8;
+      #   height = 0.8;
+      # };
       nvim-tree = {
         enable = true;
         filters = {
