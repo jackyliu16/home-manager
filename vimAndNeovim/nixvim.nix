@@ -141,12 +141,12 @@ in
       #     '';
       # }))
       # language support
-      vim-lsp
+      # vim-lsp
       # # asyncomplete-vim
       # # jedi-vim
-      vim-nix
-      rust-vim
-      vim-toml
+      # vim-nix
+      # rust-vim
+      # vim-toml
       # YouCompleteMe   # 自动补全
 
       # UI
@@ -161,7 +161,7 @@ in
       # Tools
       auto-pairs
       LeaderF         # 模糊查找
-      nerdcommenter   # 多行注释支持
+      # nerdcommenter   # 多行注释支持
       # Vundle-vim      # plug-in manager for Vim
       # lightline     # tabline customization
       vim-fugitive    # Git Support
