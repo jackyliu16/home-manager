@@ -71,6 +71,13 @@ in
         # };
       };
       # neo-tree.enable = true;
+      treesitter = {
+        enable = true;
+        indent = true;
+        nixGrammars = false;
+        ensureInstalled = [ "rust" "python" ];
+        package = (pkgs.vimPlugins.nvim-treesitter.withPlugins (p: [ p.c p.cpp p.nix ]));
+      };
       startify.enable = true;         # 新标签页
       floaterm = {
         enable = true;
@@ -152,7 +159,7 @@ in
       # UI
       vim-gitgutter     # status in gitter
       # vim-airline     # vim-devicons
-      (nvim-treesitter.withPlugins (p: [ p.c p.cpp p.java p.rust p.python p.go p.toml ]))
+      # (nvim-treesitter.withPlugins (p: [ p.c p.cpp p.java p.rust p.python p.go p.toml ]))
       # vim-bufferline  # 标签页
       # nvim-gdb
       
