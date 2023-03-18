@@ -13,6 +13,7 @@ in
     ./colorscheme.nix
     # ./lightline.nix
     # ./airline.nix
+    ./lang.nix
   ];
 
   programs.nixvim = {
