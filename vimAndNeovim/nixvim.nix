@@ -57,10 +57,6 @@ in
 
     plugins = {
       markdown-preview.enable = true;
-      treesitter = {
-        enable = true;
-        ensureInstalled = [ "c" "python" "rust" "cpp" "toml" "nix" "go" "java" ];
-      }; 
       telescope = {
         enable = true;
         # keymaps = {
@@ -154,7 +150,7 @@ in
       # UI
       vim-gitgutter     # status in gitter
       # vim-airline     # vim-devicons
-      (nvim-treesitter.withPlugins (p: [ p.c p.java p.rust p.python p.go ]))
+      (nvim-treesitter.withPlugins (p: [ p.c p.cpp p.java p.rust p.python p.go p.toml ]))
       # vim-bufferline  # 标签页
       # nvim-gdb
       
