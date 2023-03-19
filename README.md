@@ -6,12 +6,12 @@
 
 | Normal            | Abbreviation            |
 | ----------------- | ----------------------- |
-| Ctrl + sth        | <C-?>                   |
-| space, esc, shift | <Space>, <ESC>, <shift> |
-| Alt + sth         | <A>                     |
-| back space        | <BS>                    |
-| carriage return   | <CR>                    |
-| f1 - f12          | <f1> - <f12>            |
+| Ctrl + sth        | \<C-?\>                   |
+| space, esc, shift | \<Space\>, \<ESC\>, \<shift\> |
+| Alt + sth         | \<A\>                     |
+| back space        | \<BS\>                    |
+| carriage return   | \<CR\>                    |
+| f1 - f12          | \<f1\> - \<f12\>            |
 
 
 
