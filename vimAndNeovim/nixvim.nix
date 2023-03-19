@@ -34,7 +34,7 @@ in
         # using for Bufferline
         "<C-h>" = ":BufferLineCyclePrev<CR>";
         "<C-l>" = ":BufferLineCycleNext<CR>";     # move to prev, next buffer
-        "<C-w>" = ":bdelete %";                   # delete current buffer
+        "<C-w>" = ":bdelete %<CR>";                   # delete current buffer
         # Leader Operation
         mapleader = "<Space>";
         "<leader>1" = { action = ":BufferLineGoToBuffer 1<CR>"; silent = true; };

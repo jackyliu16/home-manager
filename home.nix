@@ -39,7 +39,8 @@ in
   programs.home-manager.enable = true;
 
   imports = [
-    src/zsh.nix
+    ./src/zsh.nix
+    ./src/tmux.nix
     ./vimAndNeovim/nixvim.nix
   ];
 
@@ -47,7 +48,7 @@ in
     # Basical 
     pkgs.git
     pkgs.ripgrep    # search the content of the file in a directory
-    pkgs.tmux       # terminal split screen
+    # pkgs.tmux       # terminal split screen
     pkgs.tree       # show the directory structure as a tree
     pkgs.jq         # ?
     pkgs.fzf        # everything
@@ -55,6 +56,7 @@ in
     pkgs.htop       # colorful top
     pkgs.ranger     # file management
     pkgs.ripgrep    #  ripgrep recursively searches directories for a regex pattern
+    pkgs.kitty
 
     # Coding 
     pkgs.gnumake
