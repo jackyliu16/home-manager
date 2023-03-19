@@ -18,7 +18,7 @@ in
     ./status_bar.nix
     ./lang.nix
     ./terminal.nix
-    # ./autocomplete.nix
+    ./autocomplete.nix
   ];
 
   programs.nixvim = {
