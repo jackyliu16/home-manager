@@ -36,25 +36,23 @@ in
     src/zsh.nix
   ];
 
-  home.packages = [
+  home.packages = with pkgs; [
     # Basical 
-    pkgs.git
-    pkgs.ripgrep    # search the content of the file in a directory
-    pkgs.tmux       # terminal split screen
-    pkgs.tree       # show the directory structure as a tree
-    pkgs.jq         # ?
-    pkgs.fzf        # everything
-    pkgs.rnix-lsp   # lsp support of nix
-    pkgs.htop       # colorful top
-    pkgs.ranger     # file management
+    git
+    ripgrep    # search the content of the file in a directory
+    tmux       # terminal split screen
+    tree       # show the directory structure as a tree
+    jq         # ?
+    fzf        # everything
+    rnix-lsp   # lsp support of nix
+    htop       # colorful top
+    ranger     # file management
 
     # Coding 
-    pkgs.gnumake
-    pkgs.clang
-    (pkgs.python310.withPackages my-python-packages)
-    # pkgs.ycmd            # the code-completion server of YouCompleteMe
-    # pkgs.python3
-
+    gnumake
+    clang
+    (python310.withPackages my-python-packages)
+  ] ++ [
     # Personal
     ls-colors
     minidev
