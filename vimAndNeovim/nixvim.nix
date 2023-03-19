@@ -34,11 +34,6 @@ in
         "<C-h>" = ":BufferLineCyclePrev<CR>";
         "<C-l>" = ":BufferLineCycleNext<CR>";     # move to prev, next buffer
         "<C-w>" = ":bdelete %";                   # delete current buffer
-        # Terminal(floaterm)
-        "<A-1>" = ":FloatermNew --with-type=split --height=0.4<CR>";
-        "<A-2>" = ":FloatermNew --with-type=vsplit --width=0.4<CR>";
-        "<A-3>" = ":FloatermNew<CR>";
-        "<C-j>" = ":FloatermShow<CR>";
         # Leader Operation
         mapleader = "<Space>";
         "<leader>1" = { action = ":BufferLineGoToBuffer 1<CR>"; silent = true; };
@@ -52,11 +47,6 @@ in
       };
       insert = {
         "jk" = "<ESC>";
-      };
-      terminal = {
-        # floaterm
-        "<C-j>" = "<C-\\><C-n>:FloatermHide<CR>";
-        "<C-w>" = "<C-\\><C-n>:FloatermKill<CR>";
       };
     };
 
@@ -92,11 +82,6 @@ in
         ];
       };
       startify.enable = true;         # 新标签页
-      floaterm = {
-        enable = true;
-        width = 0.8;
-        height = 0.8;
-      };
       nvim-tree = {
         enable = true;
         filters = {
