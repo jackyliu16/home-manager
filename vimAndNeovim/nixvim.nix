@@ -85,6 +85,7 @@ in
       startify.enable = true;         # 新标签页
       nvim-tree = {
         enable = true;
+        autoClose = true;
         filters = {
           dotfiles = false;
           exclude = [                 # include in nvim-tree
