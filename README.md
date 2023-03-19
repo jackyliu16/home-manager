@@ -2,6 +2,12 @@
 
 ### Mapping
 
+#### Terminal
+
+- using Alt + 1~3 to using 3 different ways to start a new terminal
+- using Ctrl + W to kill current terminal (bufferline)
+- using Ctrl + j to open and close terminal 
+
 #### Nomenclature 
 
 | Normal            | Abbreviation            |

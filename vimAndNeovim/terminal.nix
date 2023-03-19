@@ -6,8 +6,8 @@
     maps = {
       normal = {
         # Terminal(floaterm)
-        "<A-1>" = ":FloatermNew --win-type=split --height=0.4<CR>";
-        "<A-2>" = ":FloatermNew --win-type=vsplit --width=0.4<CR>";
+        "<A-1>" = ":FloatermNew --wintype=split --height=0.4<CR>";
+        "<A-2>" = ":FloatermNew --wintype=vsplit --width=0.4<CR>";
         "<A-3>" = ":FloatermNew<CR>";
         "<C-j>" = ":FloatermShow<CR>";
       };
