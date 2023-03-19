@@ -2,6 +2,7 @@
 , config
 , lib
 , ... }:
+
 let
   nixvim = import (builtins.fetchGit {
     url = "https://github.com/pta2002/nixvim";
@@ -15,8 +16,7 @@ in
     # For nix-darwin nixvim.nixDarwinModules.nixvim
     ./colorscheme.nix
     ./status_bar.nix
-    # ./airline.nix
-    # ./lang.nix
+    ./lang.nix
     # ./autocomplete.nix
   ];
 
