@@ -54,6 +54,6 @@
 
 > if you using pipe to put the info into pp_json, it will make it visual.
 
-[home-manager](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/jsontools)
+[home-page](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/jsontools)
 
 
