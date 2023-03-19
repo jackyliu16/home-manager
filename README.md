@@ -8,7 +8,13 @@
 - using Ctrl + W to kill current terminal (bufferline)
 - using Ctrl + j to open and close terminal 
 
-#### Nomenclature 
+#### [Terminal Windows Controls](https://www.cnblogs.com/xiaodi-js/p/9181062.html)
+
+#### Nvim-Tree
+
+`:cd %:h`set the working directory to buffer parent folder
+
+#### Nomenclatur 
 
 | Normal            | Abbreviation            |
 | ----------------- | ----------------------- |
