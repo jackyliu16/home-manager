@@ -5,11 +5,11 @@
   # only one could be enable at the time
   programs.nixvim.plugins = {
     lightline = {
-      enable = true;
+      enable = false;
       colorscheme = "wombat";
     };
     lualine = {
-      enable = false;
+      enable = true;
     };
     airline = {
       enable = false;
