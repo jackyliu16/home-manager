@@ -12,8 +12,8 @@
       enable = false;
     };
     airline = {
-    enable = false;
-    theme = "Plug";
-  };
+      enable = false;
+      theme = "Plug";
+    };
   };
 }
