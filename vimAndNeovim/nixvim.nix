@@ -17,6 +17,7 @@ in
     ./colorscheme.nix
     ./status_bar.nix
     ./lang.nix
+    ./terminal.nix
     # ./autocomplete.nix
   ];
 
@@ -145,22 +146,11 @@ in
       #                 'autocmd CursorMoved,CursorMovedI,BufEnter'
       #     '';
       # }))
-      # language support
-      # vim-lsp
-      # # asyncomplete-vim
-      # # jedi-vim
-      # vim-nix
-      # rust-vim
-      # vim-toml
-      # YouCompleteMe   # 自动补全
 
       # UI
       vim-gitgutter     # status in gitter
-      # vim-airline     # vim-devicons
       # (nvim-treesitter.withPlugins (p: [ p.c p.cpp p.java p.rust p.python p.go p.toml ]))
-      # vim-bufferline  # 标签页
       # nvim-gdb
-      
       # vim-devicons    
 
       # Tools
@@ -170,7 +160,6 @@ in
       # Vundle-vim      # plug-in manager for Vim
       # lightline     # tabline customization
       vim-fugitive    # Git Support
-
       which-key-nvim
     ];
     extraConfigVim = ''
