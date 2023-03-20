@@ -9,6 +9,18 @@
     ];
 
     plugins = {
+      lsp = {
+        keymaps.silent = true;
+        keymaps.lspBuf = {
+          "gd" = "definition";
+          "gD" = "references";
+          "ca" = "code_action";
+          "gi" = "implementation";
+          "gt" = "type_definition";
+          "ff" = "format";
+          "K"  = "hover";
+        };
+      };
       cmp-nvim-lsp.enable = true;
       cmp-buffer.enable   = true;
       cmp-path.enable     = true;
