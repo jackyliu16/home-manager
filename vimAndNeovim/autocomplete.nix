@@ -13,6 +13,7 @@
       cmp-buffer.enable   = true;
       cmp-path.enable     = true;
       cmp-cmdline.enable  = true;
+      cmp-vsnip.enable    = true;
       nvim-cmp = {
         enable = true;
         snippet.expand = "vsnip";
@@ -52,7 +53,6 @@
           # { name = "cmp_tabnine"; }
         ];
       };    
-      cmp-vsnip.enable    = true;
     };
     extraConfigLua = ''
       local cmp = require("cmp")
