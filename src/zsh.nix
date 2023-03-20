@@ -41,6 +41,7 @@
       hws="home-manager switch --flake . --option substituters 'https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store'";
       hns="home-manager switch";
       chw="cd ~/.config/nixpkgs/";
+      connect="ssh pi@192.168.149.1";
     };
     localVariables = {
       TERM="xterm-256color";
