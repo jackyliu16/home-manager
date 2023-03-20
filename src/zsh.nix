@@ -39,6 +39,7 @@
       hws="home-manager switch --flake . --option substituters 'https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store'";
       hns="home-manager switch";
       chw="cd ~/.config/nixpkgs/";
+      send="curl -F 'c=@-' 'https://fars.ee'";
     };
     initExtra = ''
       # Enable Nix
