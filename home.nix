@@ -57,6 +57,7 @@ in
     pkgs.ranger     # file management
     pkgs.ripgrep    #  ripgrep recursively searches directories for a regex pattern
     pkgs.kitty
+    pkgs.sshfs
 
     # Coding 
     pkgs.gnumake
