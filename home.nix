@@ -52,6 +52,12 @@ in
     gnumake
     clang
     (python310.withPackages my-python-packages)
+    wsl-open
+
+    # Others
+    hugo
+    jekyll
+    font-awesome
   ] ++ [
     # Personal
     ls-colors
