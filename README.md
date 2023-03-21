@@ -2,6 +2,12 @@
 
 ### Mapping
 
+#### Commentary
+
+- using `gc`  comment out a line
+- using `gcc` comment out target of a motion
+  - using `gcap` comment out a paragraph
+
 #### Terminal
 
 - using Alt + 1~3 to using 3 different ways to start a new terminal
