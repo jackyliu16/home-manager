@@ -53,7 +53,7 @@ in
 
     plugins = {
       surround.enable = false;    # 括号处理
-      commentary.enable = false;  # 代码注释
+      commentary.enable = true;  # 代码注释
       undotree.enable = false;    # TODO list
       # code_runner 
       markdown-preview.enable = true;
