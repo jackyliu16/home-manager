@@ -2,6 +2,10 @@
 
 ### Mapping
 
+#### Vim Windows
+
+[help page](http://yyq123.github.io/learn-vim/learn-vi-14-MultiWindows.html)
+
 #### Commentary
 
 - using `gc`  comment out a line
