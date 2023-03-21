@@ -45,6 +45,7 @@ in
         "<leader>bp"= { action = ":BufferLinePickClose<CR>"; silent = true; };
         "<leader>bdl"= { action = ":BufferLineCloseLeft<CR>"; silent = true; };
         "<leader>bdr"= { action = ":BufferLineCloseRight<CR>"; silent = true; };
+        "<f5>" = ":UndotreeToggle<CR>"; 
       };
       insert = {
         "jk" = "<ESC>";
@@ -54,7 +55,7 @@ in
     plugins = {
       surround.enable = false;    # 括号处理
       commentary.enable = true;  # 代码注释
-      undotree.enable = false;    # TODO list
+      undotree.enable = true;    # TODO list
       # code_runner 
       markdown-preview.enable = true;
       telescope = {
