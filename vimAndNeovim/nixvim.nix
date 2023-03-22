@@ -19,6 +19,7 @@ in
     ./lang.nix
     ./terminal.nix
     ./autocomplete.nix
+    ./file_explorers.nix
   ];
 
   programs.nixvim = {
@@ -28,9 +29,6 @@ in
 
     maps = {
       normal = {
-        # using for Neo-Tree
-        "<C-e>" = ":NvimTreeToggle<CR>";
-        # "<C-e>" = ":Neotree<CR>";
         # using for Bufferline
         "<C-h>" = ":BufferLineCyclePrev<CR>";
         "<C-l>" = ":BufferLineCycleNext<CR>";     # move to prev, next buffer
@@ -68,24 +66,6 @@ in
         #   "<leader>fh" = "oldfiles";      # Recently opened files 
         #   "<leader>fb" = "file_browser";  # File Browser  
         # };
-      };
-      # neo-tree.enable = true;
-      treesitter = {
-        enable = true;
-        indent = true;
-        ensureInstalled = [ "rust" "python" "c" "cpp" "toml" "nix" "go" "java" ];
-        grammarPackages = with config.programs.nixvim.plugins.treesitter.package.builtGrammars; [
-          c
-          go
-          cpp
-          nix
-          bash
-          html
-          help
-          latex
-          python
-          rust
-        ];
       };
       startify.enable = true;         # 新标签页
       nvim-tree = {
