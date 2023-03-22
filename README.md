@@ -1,6 +1,13 @@
 ## Neovim
 
 ### Mapping
+#### Useful
+
+##### Code Fold
+
+#### Markdown Operation
+
+- using `<C-p>` to open a markdown file in browser
 
 #### Vim Windows
 

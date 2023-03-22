@@ -33,6 +33,8 @@ in
         "<C-h>" = ":BufferLineCyclePrev<CR>";
         "<C-l>" = ":BufferLineCycleNext<CR>";     # move to prev, next buffer
         "<C-w>x" = ":bdelete %";                  # delete current buffer
+        # Markdown-preview
+        "<C-p>" = "<Plug>MarkdownPreviewToggle";
         # Leader Operation
         mapleader = "<Space>";
         "<leader>1" = { action = ":BufferLineGoToBuffer 1<CR>"; silent = true; };
@@ -55,7 +57,10 @@ in
       commentary.enable = true;  # 代码注释
       undotree.enable = true;    # TODO list
       # code_runner 
-      markdown-preview.enable = true;
+      markdown-preview = {
+        enable = true;
+        autoClose = true;
+      };
       telescope = {
         enable = true;
         # keymaps = {
