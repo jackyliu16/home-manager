@@ -4,11 +4,12 @@
   programs.nixvim = {
     extraPlugins = with pkgs.vimPlugins; [
       friendly-snippets
-      lspkind-nvim
+      # lspkind-nvim
       vim-vsnip
     ];
 
     plugins = {
+      lspkind.enable = true;
       lsp = {
         keymaps.silent = true;
         keymaps.lspBuf = {
