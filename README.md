@@ -5,6 +5,8 @@
 
 ##### Code Fold
 
+- using `zf` to fold select code
+- using `zfa()` to fold `()`
 - using `za` open/close current folding
   - using `zc` close      ~
   - using `zo` open       ~
