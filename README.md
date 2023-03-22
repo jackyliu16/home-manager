@@ -5,6 +5,21 @@
 
 ##### Code Fold
 
+- using `za` open/close current folding
+  - using `zc` close      ~
+  - using `zo` open       ~
+  - using `zm` to close all folding
+  - using `zM` to nesting close all folding
+  - using `zr` to open all folding
+  - using `zR` to nesting open all folding
+- delete
+  - using `zd` to delete current folding
+  - using `zE` to delete all folding
+- move between folding
+  - using `zj` move to next folding
+  - using `zk` move to prev folding
+- using `zn`/`zN` disable/enable folding
+
 #### Markdown Operation
 
 - using `<C-p>` to open a markdown file in browser
