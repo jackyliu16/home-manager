@@ -35,6 +35,8 @@ in
         "<C-w>x" = ":bdelete %";                  # delete current buffer
         # Markdown-preview
         "<C-p>" = "<Plug>MarkdownPreviewToggle";
+        # Fold
+        "<Space>" = "za";
         # Leader Operation
         mapleader = "<Space>";
         "<leader>1" = { action = ":BufferLineGoToBuffer 1<CR>"; silent = true; };
