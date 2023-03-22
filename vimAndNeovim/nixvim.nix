@@ -67,20 +67,24 @@ in
         #   "<leader>fb" = "file_browser";  # File Browser  
         # };
       };
-      startify.enable = true;         # 新标签页
-      nvim-tree = {
+      treesitter = {
         enable = true;
-        autoClose = true;
-        filters = {
-          dotfiles = false;
-          exclude = [                 # include in nvim-tree
-            ".gitignore"
-          ];
-          custom = [                  # exclude in nvim-tree
-            "^\\.git"
-          ];
-        };    
+        indent = true;
+        ensureInstalled = [ "rust" "python" "c" "cpp" "toml" "nix" "go" "java" ];
+        grammarPackages = with config.programs.nixvim.plugins.treesitter.package.builtGrammars; [
+          c
+          go
+          cpp
+          nix
+          bash
+          html
+          help
+          latex
+          python
+          rust
+        ];
       };
+      startify.enable = true;         # 新标签页
       # change in different buffer
       bufferline = {
         enable = true;

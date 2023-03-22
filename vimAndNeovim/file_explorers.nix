@@ -7,22 +7,18 @@
     };
     plugins = {
       # neo-tree.enable = true;
-      treesitter = {
+      nvim-tree = {
         enable = true;
-        indent = true;
-        ensureInstalled = [ "rust" "python" "c" "cpp" "toml" "nix" "go" "java" ];
-        grammarPackages = with config.programs.nixvim.plugins.treesitter.package.builtGrammars; [
-          c
-          go
-          cpp
-          nix
-          bash
-          html
-          help
-          latex
-          python
-          rust
-        ];
+        autoClose = true;
+        filters = {
+          dotfiles = false;
+          exclude = [                 # include in nvim-tree
+            ".gitignore"
+          ];
+          custom = [                  # exclude in nvim-tree
+            "^\\.git"
+          ];
+        };    
       };
     };
   };
