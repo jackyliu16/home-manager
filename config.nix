@@ -1,3 +1,4 @@
 {
   allowUnFree=true;
+  cudaSupport=true;
 }
