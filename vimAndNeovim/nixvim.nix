@@ -20,6 +20,7 @@ in
     ./terminal.nix
     ./autocomplete.nix
     ./file_explorers.nix
+    ./highlight.nix
   ];
 
   programs.nixvim = {
