@@ -161,6 +161,7 @@ in
     };
 
     extraPlugins = with pkgs.vimPlugins; [
+      # vim-wakatime
       # (vim-wakatime.overrideAttrs (old: {
       #   patchPhase = ''
       #     # Move the BufEnter hook from the InitAndHandleActivity call
@@ -178,7 +179,6 @@ in
 
       # UI
       vim-gitgutter     # status in gitter
-      # (nvim-treesitter.withPlugins (p: [ p.c p.cpp p.java p.rust p.python p.go p.toml ]))
       # nvim-gdb
       # vim-devicons    
 
