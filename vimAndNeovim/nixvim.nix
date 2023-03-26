@@ -62,6 +62,11 @@ in
     };
 
     plugins = {
+      comment-nvim = {
+        enable = true;
+        opleader = {line = "<C-m>";};
+        toggler = {line = "<C-m>";};
+      };
       surround.enable = false;    # 括号处理
       commentary.enable = true;  # 代码注释
       undotree.enable = true;    # TODO list
