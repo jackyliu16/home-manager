@@ -49,6 +49,11 @@ in
         "<leader>bdl"= { action = ":BufferLineCloseLeft<CR>"; silent = true; };
         "<leader>bdr"= { action = ":BufferLineCloseRight<CR>"; silent = true; };
         "<f5>" = ":UndotreeToggle<CR>"; 
+        # Windows
+        "<M-Left>"  = { action = ":vertical res -5<CR>"; silent = true; };
+        "<M-Right>" = { action = ":vertical res +5<CR>"; silent = true; };
+        "<M-Up>"    = { action = ":res -5<CR>"; silent = true; };
+        "<M-Down>"  = { action = ":res +5<CR>"; silent = true; };
       };
       insert = {
         "jk" = "<ESC>";
