@@ -103,6 +103,7 @@ in
           { c="~/.config/nixpkgs/"; }
           { ch= "~/.config/nixpkgs/home.nix"; }
         ];
+        # https://www.ascii-art-generator.org/
         customHeader = [
 "    ____ _     _  __   __            ____  _             _         _   _               _   _____         _            ___  "
 "   |  _ \\(_) __| | \\ \\ / /__  _   _  / ___|| |_ _   _  __| |_   _  | | | | __ _ _ __ __| | |_   _|__   __| | __ _ _   |__ \\ "
