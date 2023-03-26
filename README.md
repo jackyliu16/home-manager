@@ -44,6 +44,15 @@
 
 #### [Terminal Windows Controls](https://www.cnblogs.com/xiaodi-js/p/9181062.html)
 
+##### Split
+
+| horizontal split | vertical split | Close the active window | Close other windows |
+| ---------------- | -------------- | ----------------------- | ------------------- |
+| `<Ctrl-W> + S`   | `<Ctrl-W> + V` | `<Ctrl-W> + C`          | `<Ctrl-W> + O`      |
+|                  |                |                         |                     |
+
+
+
 #### Nvim-Tree
 
 `:cd %:h`set the working directory to buffer parent folder
