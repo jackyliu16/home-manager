@@ -40,7 +40,7 @@
       nix-upgrade = "sudo -i sh -c 'nix-channel --update && nix-env -iA nixpkgs.nix && launchctl remove org.nixos.nix-daemon && launchctl load /Library/LaunchDaemons/org.nixos.nix-daemon.plist'";
       hws="home-manager switch --flake . --option substituters 'https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store'";
       hns="home-manager switch";
-      chw="cd ~/.config/nixpkgs/";
+      chw="cd ~/.config/home-manager/";
       connect="ssh pi@192.168.149.1";
     };
     localVariables = {
