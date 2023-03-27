@@ -39,7 +39,8 @@ in
   programs.home-manager.enable = true;
 
   imports = [
-    src/zsh.nix
+    ./src/zsh.nix
+    ./src/tmux.nix
     ./vimAndNeovim/nixvim.nix
   ];
 
