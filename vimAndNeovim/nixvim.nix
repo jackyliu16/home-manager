@@ -66,12 +66,13 @@ in
     };
 
     plugins = {
+      surround.enable = true;       # 括号操作
+      nvim-autopairs.enable = true; # 括号补全
       comment-nvim = {
         enable = true;
         opleader = {line = "<C-m>";};
         toggler = {line = "<C-m>";};
       };
-      surround.enable = false;    # 括号处理
       commentary.enable = true;  # 代码注释
       undotree.enable = true;    # TODO list
       # code_runner 
@@ -192,7 +193,6 @@ in
       # vim-devicons    
 
       # Tools
-      auto-pairs
       LeaderF         # 模糊查找
       # nerdcommenter   # 多行注释支持
       # Vundle-vim      # plug-in manager for Vim
