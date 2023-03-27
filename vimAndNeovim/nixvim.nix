@@ -6,8 +6,7 @@
 let
   nixvim = import (builtins.fetchGit {
     url = "https://github.com/pta2002/nixvim";
-    rev = "e46b7302afda5cc1e0f7c20a5b70feff21d2279f";
-    
+    rev = "7f50b54bfb999671778f17192d75b8c23c6d75b9";
   });
   # nixvim = import (builtins.fetchGit {
   #   url = "https://github.com/pta2002/nixvim";
