@@ -40,6 +40,7 @@
       hns="home-manager switch";
       chw="cd ~/.config/nixpkgs/";
       send="curl -F 'c=@-' 'https://fars.ee'";
+      connect="ssh pi@192.168.149.1";
     };
     localVariables = {
       TERM="xterm-256color";
