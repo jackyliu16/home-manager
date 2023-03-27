@@ -44,7 +44,6 @@ in
         # Fold
         "<Space>" = "za";
         # Leader Operation
-        mapleader = "<Space>";
         "<leader>1" = { action = ":BufferLineGoToBuffer 1<CR>"; silent = true; };
         "<leader>2" = { action = ":BufferLineGoToBuffer 2<CR>"; silent = true; };
         "<leader>3" = { action = ":BufferLineGoToBuffer 3<CR>"; silent = true; };
@@ -128,7 +127,7 @@ in
       expandtab = true;
       autoindent = true;
       copyindent = true;
-      smartindent = true;
+      # smartindent = true;
 
       tabstop = 2;
       softtabstop = 2;
@@ -202,6 +201,15 @@ in
     ];
     extraConfigVim = ''
       autocmd TermOpen * setlocal nonumber norelativenumber
+      " Leader
+      let mapleader = ","
+      let leader = ","
+      
+      " LeaderF https://retzzz.github.io/dc9af5aa/
+      let g:Lf_WorkingDirectoryMode = 'AF'
+      let g:Lf_RootMarkers = ['.git', '.svn', '.hg', '.project', '.root']
+    '';
+    extraConfigLua = ''
     '';
   };
 }
