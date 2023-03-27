@@ -27,6 +27,11 @@ in
         # using for Bufferline
         "<C-h>" = ":BufferLineCyclePrev<CR>";
         "<C-l>" = ":BufferLineCycleNext<CR>";
+        # Esc Operation
+        "<SPACE>" = ":";
+      };
+      insert = {
+        "jk" = "<ESC>";
       };
     };
 

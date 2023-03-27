@@ -13,8 +13,6 @@
 | carriage return   | \<CR\>                    |
 | f1 - f12          | \<f1\> - \<f12\>            |
 
-
-
 ## terminal 
 
 ### Zsh Plugins 
