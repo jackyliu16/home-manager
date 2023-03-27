@@ -2,6 +2,30 @@
 
 ### Mapping
 
+#### LeaderF
+
+-   using `<leader>f` to open menu
+
+-   ```
+    <C-C>, <ESC> : 退出
+    <C-R> : 在模糊查询和正则表达式模式间切换
+    <C-F> : 在全路径搜索和名字搜索模式间切换
+    <Tab> : 切换成normal模式
+    <C-V>, <S-Insert> : 从剪切板里copy字符串进行查询
+    <C-U> : 清除已经打出的字符
+    <C-J>, <C-K> : 在结果列表中移动
+    <Up>, <Down> : 从历史记录里调出上一次/下一次的输入pattern
+    <2-LeftMouse> or <CR> : 打开在光标处的文件或者被选择的多个文件
+    <F5>  : 刷新缓存
+    <C-P> : 预览选中结果
+    <C-Up> : 在预览popup窗口里滚动向上
+    <C-Down> : 在预览popup窗口里滚动向下
+    ```
+
+-   reference
+
+    -   https://retzzz.github.io/dc9af5aa/
+
 #### [Surround](http://yyq123.github.io/learn-vim/learn-vim-plugin-surround.html)
 
 #### Useful
