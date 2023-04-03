@@ -45,8 +45,12 @@ in
   ];
 
   home.packages = with pkgs; [
+    (pkgs.writeScriptBin "nixFlakes" ''
+      exec ${pkgs.nixUnstable}/bin/nix --experimental-features "nix-command flakes" "$@"
+    '')
+    # netdfonts
     # Basical 
-    git
+    tldr
     ripgrep    # search the content of the file in a directory
     tmux       # terminal split screen
     tree       # show the directory structure as a tree
