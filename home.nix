@@ -48,7 +48,10 @@ in
     (pkgs.writeScriptBin "nixFlakes" ''
       exec ${pkgs.nixUnstable}/bin/nix --experimental-features "nix-command flakes" "$@"
     '')
-    # netdfonts
+    vscode
+    nerdfonts
+    font-awesome
+    powerline-fonts
     # Basical 
     tldr
     ripgrep    # search the content of the file in a directory
@@ -74,6 +77,8 @@ in
     ls-colors
     minidev
   ];
+
+  fonts.fontconfig.enable = true;
 
   # config: vim and neovim
   programs = {
