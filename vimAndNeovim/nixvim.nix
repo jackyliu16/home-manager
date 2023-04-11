@@ -101,7 +101,7 @@ in
           nix
           bash
           html
-          help
+          # help
           latex
           python
           rust
