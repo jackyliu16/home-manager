@@ -48,7 +48,14 @@ in
     (pkgs.writeScriptBin "nixFlakes" ''
       exec ${pkgs.nixUnstable}/bin/nix --experimental-features "nix-command flakes" "$@"
     '')
-    vscode
+    (vscode-with-extensions.override {
+      vscodeExtensions = with vscode-extensions; [
+        bbenoist.nix
+        vscodevim.vim
+        jnoortheen.nix-ide
+        ms-vscode-remote.remote-ssh
+      ];
+    })
     nerdfonts
     font-awesome
     powerline-fonts
