@@ -141,5 +141,6 @@ in
         theme = "base16-256";
       };
     };
+    command-not-found.enable = true;
   };
 }
