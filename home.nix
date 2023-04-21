@@ -55,6 +55,7 @@ in
         jnoortheen.nix-ide
         ms-vscode-remote.remote-ssh
         davidanson.vscode-markdownlint
+        valentjn.vscode-ltex
       ];
     })
     # vscode
