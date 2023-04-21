@@ -54,8 +54,10 @@ in
         vscodevim.vim
         jnoortheen.nix-ide
         ms-vscode-remote.remote-ssh
+        davidanson.vscode-markdownlint
       ];
     })
+    # vscode
     nerdfonts
     font-awesome
     powerline-fonts
