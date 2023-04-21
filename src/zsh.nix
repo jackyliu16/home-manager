@@ -42,6 +42,7 @@
       send="curl -F 'c=@-' 'https://fars.ee'";
       chw="cd ~/.config/home-manager/";
       cos="cd ~/.config/nix-starter-configs/standard/";
+      blog="cd ~/Documents/blog/";
       connect="ssh pi@192.168.149.1";
     };
     localVariables = {
