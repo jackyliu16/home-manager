@@ -56,6 +56,9 @@ in
         ms-vscode-remote.remote-ssh
         davidanson.vscode-markdownlint
         valentjn.vscode-ltex
+        donjayamanne.githistory
+        mhutchie.git-graph
+        ms-vscode.cpptools
       ];
     })
     # vscode
@@ -82,6 +85,9 @@ in
     hugo
     jekyll
     font-awesome
+    
+    # packing
+    nix-init
   ] ++ [
     # Personal
     ls-colors
