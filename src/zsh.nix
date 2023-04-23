@@ -23,9 +23,7 @@
     enableSyntaxHighlighting = true;
     oh-my-zsh = {
       enable = true;
-      plugins = [ 
-        "git" "macos" "dircycle" "timer" "sudo" "web-search" "dirhistory" "history" "jsontools" 
-      ];
+      plugins = [ "git" "macos" "dircycle" "timer" "sudo" "web-search" "dirhistory" "history" "jsontools" ];
       theme = "robbyrussell";
     };
     sessionVariables = {
@@ -43,7 +41,7 @@
       hns="home-manager switch";
       send="curl -F 'c=@-' 'https://fars.ee'";
       chw="cd ~/.config/home-manager/";
-      cos="cd ~/.config/nix-starter-configs/standard/";
+      cos="cd ~/.config/NixOS-Config/";
       blog="cd ~/Documents/blog/";
       connect="ssh pi@192.168.149.1";
     };
