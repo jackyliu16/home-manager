@@ -59,6 +59,10 @@ in
         donjayamanne.githistory
         mhutchie.git-graph
         ms-vscode.cpptools
+        vscode-extensions.wakatime.vscode-wakatime
+        ms-python.python
+        ms-pyright.pyright
+        njpwerner.autodocstring
       ];
     })
     # vscode
@@ -75,6 +79,7 @@ in
     rnix-lsp   # lsp support of nix
     htop       # colorful top
     ranger     # file management
+    xclip       # using for neovim clipboard
     # Coding 
     gnumake
     clang

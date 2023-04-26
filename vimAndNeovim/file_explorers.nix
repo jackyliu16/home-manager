@@ -19,6 +19,7 @@
             "^\\.git"
           ];
         };    
+        actions.useSystemClipboard = true;
       };
     };
   };
