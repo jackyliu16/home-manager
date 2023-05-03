@@ -28,7 +28,7 @@ in
   # paths it should manage.
   home.username = "${user}";
   home.homeDirectory = "/home/${user}";
-  home.sessionVariables = rec {
+  home.sessionVariables = {
     XDG_CACHE_HOME  = "\${HOME}/.cache";
     XDG_CONFIG_HOME = "\${HOME}/.config";
     XDG_BIN_HOME    = "\${HOME}/.local/bin";
@@ -48,25 +48,25 @@ in
     (pkgs.writeScriptBin "nixFlakes" ''
       exec ${pkgs.nixUnstable}/bin/nix --experimental-features "nix-command flakes" "$@"
     '')
-    (vscode-with-extensions.override {
-      vscodeExtensions = with vscode-extensions; [
-        bbenoist.nix
-        vscodevim.vim
-        jnoortheen.nix-ide
-        ms-vscode-remote.remote-ssh
-        davidanson.vscode-markdownlint
-        valentjn.vscode-ltex
-        donjayamanne.githistory
-        mhutchie.git-graph
-        ms-vscode.cpptools
-        vscode-extensions.wakatime.vscode-wakatime
-        ms-python.python
-        ms-pyright.pyright
-        njpwerner.autodocstring
-      ];
-    })
+    # (vscode-with-extensions.override {
+    #   vscodeExtensions = with vscode-extensions; [
+    #     bbenoist.nix
+    #     vscodevim.vim
+    #     jnoortheen.nix-ide
+    #     ms-vscode-remote.remote-ssh
+    #     davidanson.vscode-markdownlint
+    #     valentjn.vscode-ltex
+    #     donjayamanne.githistory
+    #     mhutchie.git-graph
+    #     ms-vscode.cpptools
+    #     vscode-extensions.wakatime.vscode-wakatime
+    #     ms-python.python
+    #     ms-pyright.pyright
+    #     njpwerner.autodocstring
+    #   ];
+    # })
     # vscode
-    nerdfonts
+    # nerdfonts
     font-awesome
     powerline-fonts
     # Basical 
@@ -80,6 +80,7 @@ in
     htop       # colorful top
     ranger     # file management
     xclip       # using for neovim clipboard
+    any-nix-shell
     # Coding 
     gnumake
     clang
