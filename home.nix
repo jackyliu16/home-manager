@@ -66,9 +66,26 @@ in
     #   ];
     # })
     # vscode
-    # nerdfonts
+    nerdfonts
     font-awesome
     powerline-fonts
+    # (nerdfonts.override {
+    #   fonts = [ 
+    #     "3270" "Agave" "Arimo" "AurulentSansMono" 
+    #     "AnonymousPro" "BigBlueTerminal" "BitstreamVeraSansMono" "CascadiaCode"
+    #     "CodeNewRoman" "Cousine" "DaddyTimeMono" "DejaVuSansMono"
+    #     "DroidSansMono" "FantasqueSansMono" "FantasqueSansMono" "FiraCode"
+    #     "FiraMono" "FontPatcher" "Go-Mono" "Gohu" 
+    #     "Hack" "Hasklig" "HeavyData" "Hermit" 
+    #     "iA-Writer" "IBMPlexMono" "Inconsolata" "InconsolataGo" 
+    #     "InconsolataLGC" "Iosevka" "JetBrainsMono" "Lekton" 
+    #     "LiberationMono" "Lilex" "Meslo" "Monofur" 
+    #     "Monoid" "Mononoki" "MPlus" "NerdFontsSymbolsOnly" 
+    #     "Noto" "OpenDyslexic" "Overpass" "ProFont" 
+    #     "ProggyClean" "RobotoMono" "ShareTechMono" "SourceCodePro" 
+    #     "SpaceMono" "Terminus" "Tinos" "Ubuntu" "UbuntuMono" "VictorMono"
+    #    ];
+    # })
     # Basical 
     tldr
     ripgrep    # search the content of the file in a directory
@@ -90,7 +107,6 @@ in
     # Others
     hugo
     jekyll
-    font-awesome
     
     # packing
     nix-init
