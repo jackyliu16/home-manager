@@ -104,9 +104,8 @@ in
     (python310.withPackages my-python-packages)
     wsl-open
 
-    # Others
-    hugo
-    jekyll
+    # For zola
+    zola
     
     # packing
     nix-init
