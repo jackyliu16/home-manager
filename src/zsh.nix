@@ -13,17 +13,19 @@
   #];
 
   programs.fish.enable = false;
-
   programs.zsh = {
     enable = true;
     autocd = true;
     dotDir = ".config/zsh";
     enableCompletion = true;
     enableAutosuggestions = true;
-    enableSyntaxHighlighting = true;
+    syntaxHighlighting.enable = true;
     oh-my-zsh = {
       enable = true;
-      plugins = [ "git" "macos" "dircycle" "timer" "sudo" "web-search" "dirhistory" "history" "jsontools" ];
+      plugins = [ 
+        "git" "macos" "dircycle" "timer" "sudo" "web-search" "dirhistory" "jsontools" "history" 
+        "copydir" "copyfile" "copybuffer"
+      ];
       theme = "robbyrussell";
     };
     sessionVariables = {
@@ -43,7 +45,6 @@
       chw="cd ~/.config/home-manager/";
       cos="cd ~/.config/NixOS-Config/";
       blog="cd ~/Documents/blog/";
-      connect="ssh pi@192.168.149.1";
     };
     localVariables = {
       TERM="xterm-256color";
@@ -70,6 +71,8 @@
       # [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
       export NIXPKGS_ALLOW_UNFREE=1
       any-nix-shell zsh --info-right | source /dev/stdin
+
+      eval "$(direnv hook zsh)" # Direnv hooks
     '';
     # initExtra = ''
     #   # setopt no_nomatch # Compatible bash wildcard

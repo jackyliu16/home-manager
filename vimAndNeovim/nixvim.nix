@@ -25,7 +25,7 @@ in
     ./autocomplete.nix
     ./file_explorers.nix
     ./highlight.nix
-    ./startify.nix
+    # ./startify.nix
   ];
 
   programs.nixvim = {

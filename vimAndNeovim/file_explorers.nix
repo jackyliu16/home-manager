@@ -9,7 +9,7 @@
       # neo-tree.enable = true;
       nvim-tree = {
         enable = true;
-        autoClose = true;
+        autoClose = false;
         filters = {
           dotfiles = false;
           exclude = [                 # include in nvim-tree
@@ -20,6 +20,9 @@
           ];
         };    
         actions.useSystemClipboard = true;
+        openOnSetup = true;
+        reloadOnBufenter = true;
+        # syncRootWithCwd = true;
       };
     };
   };

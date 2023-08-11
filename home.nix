@@ -14,14 +14,14 @@ let
     ln -s ${pkgs.coreutils}/bin/dircolors   $out/bin/dircolors
     cp ${LS_COLORS}/LS_COLORS               $out/share/LS_COLORS
   '';
-  minidev = pkgs.callPackage ./src/minidev {};
+  # minidev = pkgs.callPackage ./src/minidev {};
   user = "jacky";
-  my-python-packages = p: with p; [
-    pandas
-    matplotlib
-    pylint
-    rarfile
-  ];
+  # my-python-packages = p: with p; [
+  #   pandas
+  #   matplotlib
+  #   pylint
+  #   rarfile
+  # ];
 in
 {
   # Home Manager needs a bit of information about you and the
@@ -45,9 +45,9 @@ in
   ];
 
   home.packages = with pkgs; [
-    (pkgs.writeScriptBin "nixFlakes" ''
-      exec ${pkgs.nixUnstable}/bin/nix --experimental-features "nix-command flakes" "$@"
-    '')
+    # (pkgs.writeScriptBin "nixFlakes" ''
+    #   exec ${pkgs.nixUnstable}/bin/nix --experimental-features "nix-command flakes" "$@"
+    # '')
     # (vscode-with-extensions.override {
     #   vscodeExtensions = with vscode-extensions; [
     #     bbenoist.nix
@@ -66,9 +66,9 @@ in
     #   ];
     # })
     # vscode
-    nerdfonts
-    font-awesome
-    powerline-fonts
+    # nerdfonts
+    # font-awesome
+    # powerline-fonts
     # (nerdfonts.override {
     #   fonts = [ 
     #     "3270" "Agave" "Arimo" "AurulentSansMono" 
@@ -86,10 +86,12 @@ in
     #     "SpaceMono" "Terminus" "Tinos" "Ubuntu" "UbuntuMono" "VictorMono"
     #    ];
     # })
+
     # Basical 
     tldr
     ripgrep    # search the content of the file in a directory
     tmux       # terminal split screen
+    zellij
     tree       # show the directory structure as a tree
     jq         # ?
     fzf        # everything
@@ -98,11 +100,12 @@ in
     ranger     # file management
     xclip       # using for neovim clipboard
     any-nix-shell
+
     # Coding 
-    gnumake
-    clang
-    (python310.withPackages my-python-packages)
-    wsl-open
+    # gnumake
+    # clang
+    # (python310.withPackages my-python-packages)
+    # wsl-open
 
     # For zola
     zola
@@ -111,8 +114,8 @@ in
     nix-init
   ] ++ [
     # Personal
-    ls-colors
-    minidev
+    # ls-colors
+    # minidev
   ];
 
   fonts.fontconfig.enable = true;
@@ -172,5 +175,11 @@ in
       };
     };
     command-not-found.enable = true;
+  };
+  programs.direnv = {
+    enable = true;
+    nix-direnv = {
+      enable = true;
+    };
   };
 }
